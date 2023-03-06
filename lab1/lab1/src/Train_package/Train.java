@@ -1,100 +1,90 @@
 package Train_package;
+import java.time.LocalTime;
 
-public class Train
-{
-    private String Destination;
-    private int TrainNumber;
-    private int ShippingTime;
+public class Train {
+    private String destination;
+    private int trainNumber;
+    private LocalTime shippingTime;
+    private int numberOfSeatsCompartment;
+    private int numberOfSeatsPlaceCard;
+    private int numberOfSeatsSuite;
+    private int numberOfSeatsGeneral;
 
-    private int NumberOfSeatsCompartment;
-    private int NumberOfSeatsPlaceCard;
-    private int NumberOfSeatsSuite;
-    private int NumberOfSeatsGeneral;
-
-
-
-
-    public Train(String Destination, int TrainNumber, int ShippingTime, int NumberOfSeatsGeneral, int NumberOfSeatsCompartment, int NumberOfSeatsPlaceCard, int NumberOfSeatsSuite) {
-        this.Destination = Destination;
-        this.TrainNumber = TrainNumber;
-        this.ShippingTime = ShippingTime;
-        this.NumberOfSeatsGeneral = NumberOfSeatsGeneral;
-        this.NumberOfSeatsCompartment = NumberOfSeatsCompartment;
-        this.NumberOfSeatsPlaceCard = NumberOfSeatsPlaceCard;
-        this.NumberOfSeatsSuite = NumberOfSeatsSuite;
+    public Train(String destination, int trainNumber,  LocalTime shippingTime, int numberOfSeatsGeneral, int numberOfSeatsCompartment, int numberOfSeatsPlaceCard, int numberOfSeatsSuite) {
+        this.destination = destination;
+        this.trainNumber = trainNumber;
+        this.shippingTime = shippingTime;
+        this.numberOfSeatsGeneral = numberOfSeatsGeneral;
+        this.numberOfSeatsCompartment = numberOfSeatsCompartment;
+        this.numberOfSeatsPlaceCard = numberOfSeatsPlaceCard;
+        this.numberOfSeatsSuite = numberOfSeatsSuite;
     }
 
 
     public String getDestination() {
-        return Destination;
+        return destination;
     }
 
-    public void Destination(String Destination) {
-
-        this.Destination = Destination;
+    public void setDestination(String destination) {
+        this.destination = destination;
     }
-
     public int getTrainNumber() {
-        return TrainNumber;
+        return trainNumber;
     }
 
-    public void setTrainNumber(int TrainNumber) {
-        this.TrainNumber = TrainNumber;
+    public void setTrainNumber(int trainNumber) {
+        this.trainNumber = trainNumber;
     }
 
-    public int getShippingTime() {
-        return ShippingTime;
+    public  LocalTime getShippingTime() {
+        return shippingTime;
     }
 
-    public void setShippingTime(int ShippingTime) {
-        this.ShippingTime = ShippingTime;
+    public void setShippingTime( LocalTime shippingTime) {
+        this.shippingTime = shippingTime;
     }
 
-
-
-
-    public int NumberOfSeatsGeneral() {
-        return NumberOfSeatsGeneral;
+    public int getNumberOfSeatsGeneral() {
+        return numberOfSeatsGeneral;
     }
 
-    public void setNumberOfSeatsGeneral(int NumberOfSeatsGeneral) {
-        this.NumberOfSeatsGeneral = NumberOfSeatsGeneral;
+    public void setNumberOfSeatsGeneral(int numberOfSeatsGeneral) {
+        this.numberOfSeatsGeneral = numberOfSeatsGeneral;
     }
     public int getNumberOfSeatsCompartment() {
-        return NumberOfSeatsCompartment;
+        return numberOfSeatsCompartment;
     }
 
-    public void setNumberOfSeatsCompartment(int NumberOfSeatsCompartment) {
-        this.NumberOfSeatsCompartment = NumberOfSeatsCompartment;
+    public void setNumberOfSeatsCompartment(int numberOfSeatsCompartment) {
+        this.numberOfSeatsCompartment = numberOfSeatsCompartment;
     }
     public int getNumberOfSeatsPlaceCard() {
-        return NumberOfSeatsPlaceCard;
+        return numberOfSeatsPlaceCard;
     }
 
-    public void setNumberOfSeatsPlaceCard(int NumberOfSeatsPlaceCard) {
-        this.NumberOfSeatsPlaceCard = NumberOfSeatsPlaceCard;
+    public void setNumberOfSeatsPlaceCard(int numberOfSeatsPlaceCard) {
+        this.numberOfSeatsPlaceCard = numberOfSeatsPlaceCard;
     }
 
     public int getNumberOfSeatsSuite() {
-        return NumberOfSeatsSuite;
+        return numberOfSeatsSuite;
     }
 
-    public void setNumberOfSeatsSuite(int NumberOfSeatsSuite) {
-        this.NumberOfSeatsSuite = NumberOfSeatsSuite;
+    public void setNumberOfSeatsSuite(int numberOfSeatsSuite) {
+        this.numberOfSeatsSuite = numberOfSeatsSuite;
     }
 
     public String toString()
     {
         return
 
-                "Train {" + "Destination = "+  Destination +
-                        ", TrainNumber =" + TrainNumber +
-                        '\'' + ", ShippingTime = " + ShippingTime +
-                        '\'' + ", NumberOfSeatsGeneral = " + NumberOfSeatsGeneral +
-                        ", NumberOfSeatsCompartment = " + NumberOfSeatsCompartment +
-                        ", NumberOfSeatsPlaceCard = " + NumberOfSeatsPlaceCard +
-                        ", NumberOfSeatsSuite = " + NumberOfSeatsSuite + '}';
-
+                "Train {" + "Destination = "+  destination +
+                        ", TrainNumber =" + trainNumber +
+                        '\'' + ", ShippingTime = " + shippingTime +
+                        '\'' + ", NumberOfSeatsGeneral = " + numberOfSeatsGeneral +
+                        ", NumberOfSeatsCompartment = " + numberOfSeatsCompartment +
+                        ", NumberOfSeatsPlaceCard = " + numberOfSeatsPlaceCard +
+                        ", NumberOfSeatsSuite = " + numberOfSeatsSuite + '}';
     }
 
 }
