@@ -10,7 +10,7 @@ public class Main {
         Main main = new Main();
         Scanner s = new Scanner(System.in);
         while (true) {
-            System.out.println("Add = 1, GetList = 2, Exit = 3");
+            System.out.println("Add = 1, Get List = 2, Exit = 3");
             int operation = s.nextInt();
             s.nextLine();
             switch (operation){
@@ -30,17 +30,17 @@ public class Main {
 
     private void addTrain() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("DestinationName = ");
+        System.out.println("Destination Name = ");
         String destination = scanner.nextLine();
-        System.out.println("TrainNumber = ");
+        System.out.println("Train Number = ");
         int trainNumber = scanner.nextInt();
-        System.out.println("ShippingTime = ");
-        LocalTime shippingTime = addAndSearchTime();
-        System.out.println("NumberOfSeatsCompartment = ");
+        System.out.println("Shipping Time = ");
+        LocalTime shippingTime = getTime();
+        System.out.println("Number of seats Compartment = ");
         int numberOfSeatsCompartment = scanner.nextInt();
-        System.out.println("NumberOfSeatsPlaceCard = ");
+        System.out.println("Number of seats PlaceCard = ");
         int numberOfSeatsPlaceCard = scanner.nextInt();
-        System.out.println("NumberOfSeatsSuite = ");
+        System.out.println("Number of seats Suite = ");
         int numberOfSeatsSuite = scanner.nextInt();
         int numberOfSeatsGeneral = numberOfSeatsCompartment + numberOfSeatsPlaceCard + numberOfSeatsSuite;
         trainList.add(new Train(destination, trainNumber, shippingTime, numberOfSeatsGeneral, numberOfSeatsCompartment, numberOfSeatsPlaceCard,numberOfSeatsSuite));
@@ -60,24 +60,24 @@ public class Main {
            }
     }
     public void searchOperation() {
-        System.out.println("SearchDestination = 1, SearchTime = 2,SearchGeneral = 3");
+        System.out.println("Search destination = 1, Search time = 2,Search general = 3");
         Scanner scanner = new Scanner(System.in);
-        int option3 = scanner.nextInt();
+        int searchOption = scanner.nextInt();
         scanner.nextLine();
-        switch (option3)
+        switch (searchOption)
         {
             case(1):
-                optionSearchDestination();
+                methodSearchDestination();
                 break;
             case(2):
-                optionSearchTime();
+                methodSearchTime();
                 break;
             case(3):
-                optionSearchGeneral();
+                methodSearchGeneral();
                 break;
         }
     }
-    public LocalTime addAndSearchTime() {
+    public LocalTime getTime() {
         Scanner scanner = new Scanner(System.in);
         String shippingTimeInput = scanner.nextLine();
         String[] partsTime = shippingTimeInput.split(":");
@@ -86,30 +86,30 @@ public class Main {
         LocalTime shippingTimeFinal = LocalTime.of(timeHour, timeMinute);
         return shippingTimeFinal;
     }
-    public  String SearchDestination() {
-        System.out.println("SearchDestination = ");
+    public  String searchDestination() {
+        System.out.println("searchDestination = ");
         Scanner k = new Scanner(System.in);
         String optionDestination = k.nextLine();
         return optionDestination;
     }
 
-    public  void optionSearchDestination() {
-        String SeaDes = SearchDestination();
+    public  void methodSearchDestination() {
+        String inputDestination = searchDestination();
         for(int i = 0; i < trainList.size(); i++) {
 
-            if (trainList.get(i).getDestination().contains(SeaDes))
+            if (trainList.get(i).getDestination().contains(inputDestination))
             {
                 System.out.println(trainList.get(i).toString());
             }
         }
     }
-    public void optionSearchTime() {
-        String SeaDes = SearchDestination();
+    public void methodSearchTime() {
+        String inputDestination = searchDestination();
         Scanner s = new Scanner(System.in);
         System.out.println(" SearchTime = ");
-         LocalTime optionTime = addAndSearchTime();
+         LocalTime optionTime = getTime();
         for(int i = 0; i < trainList.size(); i++) {
-            if( trainList.get(i).getDestination().contains(SeaDes) && trainList.get(i).getShippingTime().equals(optionTime))
+            if( trainList.get(i).getDestination().contains(inputDestination) && trainList.get(i).getShippingTime().equals(optionTime))
             {
 
                     System.out.println(trainList.get(i).toString());
@@ -118,13 +118,13 @@ public class Main {
         }
          return;
     }
-    public  void optionSearchGeneral() {
-        String SeaDes = SearchDestination();
+    public  void methodSearchGeneral() {
+        String inputDestination = searchDestination();
         Scanner s = new Scanner(System.in);
-        System.out.println(" SearchGeneral = ");
+        System.out.println(" Search general = ");
         int optionGeneral = s.nextInt();
         for(int i = 0; i < trainList.size(); i++) {
-            if(trainList.get(i).getDestination().equals(SeaDes) & trainList.get(i).getNumberOfSeatsGeneral() == optionGeneral)
+            if(trainList.get(i).getDestination().equals(inputDestination) & trainList.get(i).getNumberOfSeatsGeneral() == optionGeneral)
             {
                 System.out.println(trainList.get(i).toString());
             }
